@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint --fix ./src/**",
     "build": "tsup ./src/index.ts --minify --dts",
-    "prepare": "npx husky install"
+    "prepare": "npx husky install",
+    "release": "release-it"
   },
   "keywords": [
     "javascript",
@@ -32,6 +33,7 @@
     "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.2",
+    "release-it": "^15.5.0",
     "tsup": "^6.2.3",
     "typescript": "^4.8.2"
   }
