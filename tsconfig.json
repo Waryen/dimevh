@@ -2,14 +2,19 @@
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"],
   "compilerOptions": {
-    "module": "CommonJS",
-    "jsx": "preserve",
-    "outDir": "dist",
+    "module": "ESNext",
+    "lib": ["DOM", "ESNext"],
+    "jsx": "react",
+    "rootDir": "./src",
+    "outDir": "./dist/esm",
     "esModuleInterop": true,
     "declaration": true,
     "sourceMap": true,
     "target": "ES6",
     "skipLibCheck": true,
-    "emitDeclarationOnly": true
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true
   }
 }

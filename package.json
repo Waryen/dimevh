@@ -4,8 +4,10 @@
   "description": "A simple wizard for React 🧙‍♂️",
   "main": "dist/index.js",
   "scripts": {
-    "lint": "eslint --fix ./src/**",
-    "build": "tsup ./src/index.ts --minify --dts",
+    "lint": "eslint --fix \"{**/*,*}.{js,ts,jsx,tsx}\"",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "prepare": "npx husky install",
     "release": "release-it"
   },
@@ -34,7 +36,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.2",
     "release-it": "^15.5.0",
-    "tsup": "^6.2.3",
     "typescript": "^4.8.2"
   }
 }
