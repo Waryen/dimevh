@@ -1,7 +1,16 @@
 {
+  "root": true,
   "env": {
     "browser": true,
     "es2021": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "globals": {
+    "JSX": true
   },
   "extends": [
     "eslint:recommended",
