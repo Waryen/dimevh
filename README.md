@@ -1,4 +1,4 @@
-# React Wizard 🧙‍♂️
+# Dimevh 🧙‍♂️
 
 Yet another wizard package for React...
 
