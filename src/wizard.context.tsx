@@ -111,43 +111,6 @@ export const WizardProvider = ({
 
   /**
    *
-   * Render a custom footer component.
-   */
-  const renderFooter = useCallback(() => {
-    if (!footer) {
-      return null;
-    }
-    if (!React.isValidElement(footer)) {
-      throw new Error('Invalid footer component.');
-    }
-    return footer;
-  }, [footer]);
-
-  /**
-   *
-   * Render a custom header component.
-   */
-  const renderHeader = useCallback(() => {
-    if (!header) {
-      return null;
-    }
-    if (!React.isValidElement(header)) {
-      throw new Error('Invalid footer component.');
-    }
-    return header;
-  }, [header]);
-
-  /**
-   *
-   * Render the current step.
-   */
-  const renderStep = useCallback(() => {
-    const childrenCollection = getValidChildren(children);
-    return childrenCollection[activeIndex - 1];
-  }, [children, activeIndex]);
-
-  /**
-   *
    * Values provided to the children.
    */
   const value = useMemo(
@@ -175,6 +138,43 @@ export const WizardProvider = ({
 
   /**
    *
+   * Render a header component if any and valid.
+   */
+  const renderHeader = useMemo(() => {
+    if (!header) {
+      return null;
+    } else if (!React.isValidElement(header(value))) {
+      throw new Error('Invalid header component passed to the wizard.');
+    } else {
+      return header(value);
+    }
+  }, [header, value]);
+
+  /**
+   *
+   * Render a footer component if any and valid.
+   */
+  const renderFooter = useMemo(() => {
+    if (!footer) {
+      return null;
+    } else if (!React.isValidElement(footer(value))) {
+      throw new Error('Invalid footer component passed to the wizard.');
+    } else {
+      return footer(value);
+    }
+  }, [footer, value]);
+
+  /**
+   *
+   * Render the current step.
+   */
+  const renderStep = useMemo(() => {
+    const childrenCollection = getValidChildren(children);
+    return childrenCollection[activeIndex - 1];
+  }, [children, activeIndex]);
+
+  /**
+   *
    * Throw an error if the `initialIndex` prop is invalid.
    */
   useEffect(() => {
@@ -187,9 +187,9 @@ export const WizardProvider = ({
 
   return (
     <Wizard.Provider value={value}>
-      {renderHeader()}
-      {renderStep()}
-      {renderFooter()}
+      {renderHeader}
+      {renderStep}
+      {renderFooter}
     </Wizard.Provider>
   );
 };

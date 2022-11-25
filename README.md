@@ -40,8 +40,8 @@ export default function Index() {
 
   return (
     <WizardProvider
-      header={Header}
-      footer={Footer}
+      header={(props) => <Header {...props} />}
+      footer={(props) => <Footer {...props} />}
       initialIndex={2}
       onStartReached={closeWizard}
       onEndReached={closeWizard}

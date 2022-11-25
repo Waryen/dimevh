@@ -1,8 +1,8 @@
 import { ReactElement } from 'react';
 
 export type WizardProps = {
-  header?: ReactElement;
-  footer?: ReactElement;
+  header?: (props: WizardContext) => ReactElement<WizardContext>;
+  footer?: (props: WizardContext) => ReactElement<WizardContext>;
   initialIndex?: number;
   onStartReached?: () => void;
   onEndReached?: () => void;
