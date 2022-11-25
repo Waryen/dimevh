@@ -1,0 +1,38 @@
+{
+  "name": "dimevh",
+  "version": "0.1.0",
+  "description": "A simple wizard for React 🧙‍♂️",
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "eslint --fix ./src/**",
+    "build": "tsup ./src/index.ts --minify --dts",
+    "prepare": "npx husky install"
+  },
+  "keywords": [
+    "javascript",
+    "typescript",
+    "react",
+    "wizard",
+    "stepper"
+  ],
+  "author": "Waryen <jonathangomand@gmail.com> (https://jonathangomand.be)",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "@types/react": "^18.0.18",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
+    "eslint": "^8.24.0",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.2",
+    "tsup": "^6.2.3",
+    "typescript": "^4.8.2"
+  }
+}

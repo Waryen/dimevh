@@ -1,0 +1,15 @@
+{
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"],
+  "compilerOptions": {
+    "module": "CommonJS",
+    "jsx": "preserve",
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "declaration": true,
+    "sourceMap": true,
+    "target": "ES6",
+    "skipLibCheck": true,
+    "emitDeclarationOnly": true
+  }
+}

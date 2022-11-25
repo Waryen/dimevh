@@ -1,0 +1,10 @@
+# project files
+node_modules
+dist
+
+# system files
+.DS_Store
+
+# IDE
+.vscode
+.idea
