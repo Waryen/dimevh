@@ -86,7 +86,7 @@ export const WizardProvider = ({
   const goToPreviousStep = useCallback(() => {
     if (activeIndex === 1) {
       if (onStartReached) {
-        onStartReached();
+        return onStartReached();
       } else {
         return;
       }
@@ -101,7 +101,7 @@ export const WizardProvider = ({
   const goToNextStep = useCallback(() => {
     if (activeIndex >= maxAmountOfSteps) {
       if (onEndReached) {
-        onEndReached();
+        return onEndReached();
       } else {
         return;
       }
@@ -143,7 +143,7 @@ export const WizardProvider = ({
    */
   const renderStep = useCallback(() => {
     const childrenCollection = getValidChildren(children);
-    return childrenCollection[activeIndex];
+    return childrenCollection[activeIndex - 1];
   }, [children, activeIndex]);
 
   /**

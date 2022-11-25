@@ -10,7 +10,7 @@ export type WizardProps = {
 
 export type WizardContext = {
   activeIndex: number;
-  previousIndex: number;
+  previousIndex: number | undefined;
   goToStep: (step: number) => void;
   goToFirstStep: () => void;
   goToLastStep: () => void;
