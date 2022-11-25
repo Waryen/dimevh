@@ -2,6 +2,12 @@
 
 Yet another wizard package for React...
 
+## Installation
+
+```
+$ npm install dimevh
+```
+
 ## Features
 
 - A provider component which you pass your steps components as children.
