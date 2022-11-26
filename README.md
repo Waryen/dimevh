@@ -22,6 +22,8 @@ Here is some code examples of how to use the wizard.
 This is the component to wrap your steps component with.
 
 ```js
+import { WizardProvider } from 'dimevh';
+
 export default function Index() {
   return (
     <WizardProvider>
@@ -38,6 +40,7 @@ or with optionnal props.
 ```js
 import Header from './header';
 import Footer from './footer';
+import { WizardProvider } from 'dimevh';
 
 export default function Index() {
   const closeWizard = () => {
@@ -65,6 +68,8 @@ export default function Index() {
 This is the consummer hook, use it inside your steps components to retrieve the wizard functions and values.
 
 ```js
+import { useWizard } from 'dimevh';
+
 export default function Step1() {
   const {
     activeIndex,
