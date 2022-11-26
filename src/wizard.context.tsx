@@ -30,6 +30,12 @@ export const WizardProvider = ({
 }: PropsWithChildren<WizardProps>) => {
   /**
    *
+   * Return the wizard custom state and setState.
+   */
+  const [state, setState] = useState<unknown>();
+
+  /**
+   *
    * Return the current step index.
    */
   const [activeIndex, setActiveIndex] = useState(initialIndex);
@@ -113,11 +119,13 @@ export const WizardProvider = ({
    *
    * Values provided to the children.
    */
-  const value = useMemo(
+  const values = useMemo(
     () => ({
       activeIndex,
       previousIndex,
       maxAmountOfSteps,
+      state,
+      setState,
       goToPreviousStep,
       goToNextStep,
       goToFirstStep,
@@ -128,6 +136,7 @@ export const WizardProvider = ({
       activeIndex,
       previousIndex,
       maxAmountOfSteps,
+      state,
       goToPreviousStep,
       goToNextStep,
       goToFirstStep,
@@ -143,12 +152,12 @@ export const WizardProvider = ({
   const renderHeader = useMemo(() => {
     if (!header) {
       return null;
-    } else if (!React.isValidElement(header(value))) {
+    } else if (!React.isValidElement(header(values))) {
       throw new Error('Invalid header component passed to the wizard.');
     } else {
-      return header(value);
+      return header(values);
     }
-  }, [header, value]);
+  }, [header, values]);
 
   /**
    *
@@ -157,12 +166,12 @@ export const WizardProvider = ({
   const renderFooter = useMemo(() => {
     if (!footer) {
       return null;
-    } else if (!React.isValidElement(footer(value))) {
+    } else if (!React.isValidElement(footer(values))) {
       throw new Error('Invalid footer component passed to the wizard.');
     } else {
-      return footer(value);
+      return footer(values);
     }
-  }, [footer, value]);
+  }, [footer, values]);
 
   /**
    *
@@ -186,7 +195,7 @@ export const WizardProvider = ({
   }, [initialIndex, maxAmountOfSteps]);
 
   return (
-    <Wizard.Provider value={value}>
+    <Wizard.Provider value={values}>
       {renderHeader}
       {renderStep}
       {renderFooter}

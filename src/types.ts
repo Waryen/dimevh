@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { Dispatch, ReactElement, SetStateAction } from 'react';
 
 export type WizardProps = {
   header?: (props: WizardContext) => ReactElement<WizardContext>;
@@ -11,6 +11,8 @@ export type WizardProps = {
 export type WizardContext = {
   activeIndex: number;
   previousIndex: number | undefined;
+  state: unknown;
+  setState: Dispatch<SetStateAction<unknown>>;
   goToStep: (step: number) => void;
   goToFirstStep: () => void;
   goToLastStep: () => void;
