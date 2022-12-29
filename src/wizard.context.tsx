@@ -16,9 +16,9 @@ Wizard.displayName = 'WizardProvider';
 /**
  *
  * Wizard provider. Pass your steps components as children.
- * @param header Optionnal custom header component.
- * @param footer Optionnal custom footer component.
- * @param initialIndex Optionnal initial index to start the wizard at a specific step.
+ * @param header Optional custom header component.
+ * @param footer Optional custom footer component.
+ * @param initialIndex Optional initial index to start the wizard at a specific step.
  */
 export const WizardProvider = ({
   children,
