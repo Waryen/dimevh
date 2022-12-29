@@ -1,6 +1,6 @@
 {
   "name": "dimevh",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "A simple wizard for React 🧙‍♂️",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
