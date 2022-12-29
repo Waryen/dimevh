@@ -75,6 +75,8 @@ export default function Step1() {
     activeIndex,
     previousIndex,
     maxAmountOfSteps,
+    state,
+    setState,
     goToPreviousStep,
     goToNextStep,
     goToFirstStep,
