@@ -45,11 +45,15 @@
     "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.2",
+    "lint-staged": "^13.2.1",
     "release-it": "^15.5.0",
     "typescript": "^5.0.2"
   },
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "lint-staged": {
+    ".{js,jsx,ts,tsx}": "npm run lint"
   }
 }
